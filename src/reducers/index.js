@@ -1,22 +1,22 @@
 import { combineReducers } from 'redux'
 
-const setUserReducer = (tokens=null, action) => {
+const setUserProfileReducer = (user=null, action) => {
     switch (action.type) {
-        case 'SET_USER':
+        case 'SET_USER_PROFILE':
             return action.payload
         default:
-            return tokens
+            return user
     }
 }
 
-const setUserActivitiesReducer = (user=null, action) => {
+const setUserActivitiesReducer = (userActivities=null, action) => {
     if(action.type === 'SET_USER_ACTIVITIES'){
         return action.payload
     }
-    return user
+    return userActivities
 }
 
 export default combineReducers({
-    returnTokens: setUserReducer,
-    user: setUserActivitiesReducer
+    userProfile: setUserProfileReducer,
+    userActivities: setUserActivitiesReducer
 })
