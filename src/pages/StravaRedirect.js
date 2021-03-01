@@ -1,8 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux'
-import { setUser, setUserActivities } from '../actions'
-import { cleanUpAuthToken, testAuthGetter, getUserData } from '../utils/functions'
+import { setUserProfile, setUserActivities } from '../actions'
+import { cleanUpAuthToken, testAuthGetter, getUserData, convertToMiles } from '../utils/functions'
 
 class StravaRedirect extends React.Component {
     componentDidMount() {
@@ -18,14 +18,15 @@ class StravaRedirect extends React.Component {
                 const stravaAuthToken = cleanUpAuthToken(location.search)
 
                 // Post Request to Strava (with AuthToken) which returns Refresh Token and and Access Token
-                const tokens = await testAuthGetter(stravaAuthToken)
-                this.props.setUser(tokens)
-                const accessToken = tokens.access_token
-                const userID = tokens.athlete.id
+                const responseTokens = await testAuthGetter(stravaAuthToken)
+                this.props.setUserProfile(responseTokens.athlete)                
+                const accessToken = responseTokens.access_token
+                const userID = responseTokens.athlete.id
 
                 // Axios request to get users info
-                const user = await getUserData(userID, accessToken)
-                this.props.setUserActivities(user)                
+                const userActivities = await getUserData(userID, accessToken)
+                userActivities.data.all_run_totals.distanceInMiles = convertToMiles(userActivities.data.all_run_totals.distance).toFixed(2)
+                this.props.setUserActivities(userActivities.data)                
                 
                 // Once complete, go to display page
                 history.push('/yourdistance');
@@ -51,5 +52,5 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {
     setUserActivities,
-    setUser
+    setUserProfile
 })(StravaRedirect);

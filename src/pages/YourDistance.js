@@ -31,21 +31,3 @@ export default connect(mapStateToProps)(YourDistance)
 
 
 
-
-
-const YourDistance = ({distanceKms, distanceMiles}) => {
-    const [isToggled, setToggled] = useState(false)
-
-    return (
-        <div>
-            { isToggled ? <h2>{distanceKms}</h2> : <h2>{distanceMiles}</h2> }
-            <button onClick={() => setToggled(!isToggled)}>Kms to Miles</button>
-        </div>
-    )
-}
-
-const mapStateToProps = state => {
-    return { 
-        userActivities: state.userActivities,
-    }
-};

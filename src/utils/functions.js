@@ -39,3 +39,7 @@ export const getUserData = async (userID, accessToken) => {
         console.log(error)
     }
 }
+
+export const convertToMiles = kms => {
+    return kms * 0.621371
+}
