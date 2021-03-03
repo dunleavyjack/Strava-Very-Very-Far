@@ -20,6 +20,12 @@ const YourDistance = ({userActivities, userProfile }) => {
     )
 }
 
+// const selectDistance = state => {
+//     const units = state.units;
+//     const {distanceInKms, distanceInMiles} = state.distance;
+//     return units === "miles" ? distanceInMiles : distanceInKms
+// }
+
 const mapStateToProps = state => {
     return { 
         userActivities: state.userActivities,
