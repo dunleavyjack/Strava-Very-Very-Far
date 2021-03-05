@@ -25,7 +25,17 @@ class StravaRedirect extends React.Component {
 
                 // Axios request to get users info
                 const userActivities = await getUserData(userID, accessToken)
-                userActivities.data.all_run_totals.distanceInMiles = convertToMiles(userActivities.data.all_run_totals.distance).toFixed(2)
+                
+                // Convert meters to kms
+                userActivities.data.all_run_totals.distanceInKms = (userActivities.data.all_run_totals.distance / 1000).toFixed(2)
+                userActivities.data.all_ride_totals.distanceInKms = (userActivities.data.all_ride_totals.distance / 1000).toFixed(2)
+                userActivities.data.all_swim_totals.distanceInKms = (userActivities.data.all_swim_totals.distance / 1000).toFixed(2)
+
+
+                // Convert kms to miles and store that data in the same object
+                userActivities.data.all_run_totals.distanceInMiles = convertToMiles(userActivities.data.all_run_totals.distanceInKms).toFixed(2)
+                userActivities.data.all_ride_totals.distanceInMiles = convertToMiles(userActivities.data.all_ride_totals.distanceInKms).toFixed(2)
+                userActivities.data.all_swim_totals.distanceInMiles = convertToMiles(userActivities.data.all_swim_totals.distanceInKms).toFixed(2)
                 this.props.setUserActivities(userActivities.data)                
                 
                 // Once complete, go to display page
@@ -53,4 +63,4 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, {
     setUserActivities,
     setUserProfile
-})(StravaRedirect);
+})(StravaRedirect); 
