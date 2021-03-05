@@ -43,17 +43,23 @@ const YourDistance = ({ userActivities, userProfile }) => {
         return result
     }
 
-    const handleRideClick = () => {
-        setUnitsUsed([...unitsUsed, "riding"])
+
+
+    const addSport = (sport) => {
+        setUnitsUsed([...unitsUsed, sport])
     }
 
-    const handleRideDelete = () => {
-        const newArray = unitsUsed.filter(unit => unit !== "riding")
+    const removeSport = (sport) => {
+        const newArray = unitsUsed.filter(unit => unit !== sport)
         setUnitsUsed(newArray)
     }
 
-    const handleSwitch = () => {
-        console.log("switch")
+    const switchSport = (sport) => {
+        if (unitsUsed.includes(sport)){
+            removeSport(sport)
+        } else {
+            addSport(sport)
+        }
     }
 
 
@@ -63,15 +69,24 @@ const YourDistance = ({ userActivities, userProfile }) => {
             <h2>Your running total: {runDistance()}</h2>
             <h2>Your riding total: {rideDistance()}</h2>
             <h2>Your swim total: {swimDistance()}</h2>
-            <h2>Combined: {combinedDistance()}</h2>
+            <h2>Total: {combinedDistance()}</h2>
 
             <button onClick={handleClick}>Convert</button>
-            <button onClick={handleRideClick}>Add Riding</button>
-            <button onClick={handleRideDelete}>Delete Riding</button>
+            {/* <button onClick={addRiding}>Add Riding</button>
+            <button onClick={removeRiding}>Delete Riding</button> */}
 
+            
             <div className="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" onSwitchChange={handleSwitch}/>
-                <label class="form-check-label" for="flexSwitchCheckChecked">Swimming</label>
+                <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={() => switchSport("running")} />
+                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Running</label>
+            </div>
+            <div className="form-check form-switch">
+                <input className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" onClick={() => switchSport("riding")}/>
+                <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Riding</label>
+            </div>
+            <div className="form-check form-switch">
+                <input className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" onClick={() => switchSport("swimming")}/>
+                <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Swimming</label>
             </div>
 
         </div>
