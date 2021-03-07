@@ -18,3 +18,10 @@ export const setUnits = data => {
         payload: data
     }
 }
+
+export const setToggle = data => {
+    return {
+        type: 'SET_TOGGLE',
+        payload: data
+    }
+}
