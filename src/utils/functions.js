@@ -40,6 +40,6 @@ export const getUserData = async (userID, accessToken) => {
     }
 }
 
-export const convertToMiles = kms => {
-    return kms * 0.621371
+export const convertToMiles = meters => {
+    return meters * 0.621371 / 1000
 }

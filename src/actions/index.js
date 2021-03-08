@@ -17,3 +17,10 @@ export const changeUnits = () => {
         type: 'CHANGE_UNITS'
     }
 }
+
+export const addSport = sportName => {
+    return {
+        type: 'ADD_SPORT',
+        payload: sportName
+    }
+}

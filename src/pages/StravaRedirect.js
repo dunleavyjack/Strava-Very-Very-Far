@@ -26,35 +26,25 @@ class StravaRedirect extends React.Component {
                 // Axios request to get users info
                 const userActivities = await getUserData(userID, accessToken)
                 
-                // Convert meters to kms
-                userActivities.data.all_run_totals.distanceInKms = (userActivities.data.all_run_totals.distance / 1000).toFixed(2)
-                userActivities.data.all_ride_totals.distanceInKms = (userActivities.data.all_ride_totals.distance / 1000).toFixed(2)
-                userActivities.data.all_swim_totals.distanceInKms = (userActivities.data.all_swim_totals.distance / 1000).toFixed(2)
-
-
-                // Convert kms to miles and store that data in the same object
-                userActivities.data.all_run_totals.distanceInMiles = convertToMiles(userActivities.data.all_run_totals.distanceInKms).toFixed(2)
-                userActivities.data.all_ride_totals.distanceInMiles = convertToMiles(userActivities.data.all_ride_totals.distanceInKms).toFixed(2)
-                userActivities.data.all_swim_totals.distanceInMiles = convertToMiles(userActivities.data.all_swim_totals.distanceInKms).toFixed(2)
-                
                 this.props.setUserActivities({
                     runTotal: {
                         kms: (userActivities.data.all_run_totals.distance / 1000).toFixed(2),
-                        miles: convertToMiles(userActivities.data.all_run_totals.distanceInKms).toFixed(2)
+                        miles: convertToMiles(userActivities.data.all_run_totals.distance).toFixed(2)
                     },
                     rideTotal: {
                         kms: (userActivities.data.all_ride_totals.distance / 1000).toFixed(2),
-                        miles: convertToMiles(userActivities.data.all_ride_totals.distanceInKms).toFixed(2)
+                        miles: convertToMiles(userActivities.data.all_ride_totals.distance).toFixed(2)
                     },
                     swimTotal: {
                         kms: (userActivities.data.all_swim_totals.distance / 1000).toFixed(2),
-                        miles: convertToMiles(userActivities.data.all_swim_totals.distanceInKms).toFixed(2)
-                    }
+                        miles: convertToMiles(userActivities.data.all_swim_totals.distance).toFixed(2)
+                    },
                 })            
                 
                 // Once complete, go to display page
                 history.push('/yourdistance');
             } catch (error) {
+                //If error, go back home
                 history.push('/');
             }
         }

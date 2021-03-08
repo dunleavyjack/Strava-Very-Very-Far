@@ -2,15 +2,15 @@ import { React, useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { changeUnits } from '../actions'
 
-const YourDistance = ({ userActivities, userProfile, changeUnits }) => {
+const YourDistance = ({ userActivities: {runTotal, rideTotal, swimTotal}, userProfile, changeUnits }) => {
     // Toggle between miles and kms. Deafult is kms
     const [isToggled, setToggled] = useState(false)
     
     const [unitsUsed, setUnitsUsed] = useState([])
-    // const [totalDistance, setTotalDistance] = useState(parseInt(0))
 
     useEffect(() => {
         document.getElementById("flexSwitchCheckChecked").click()
+        document.getElementsByClassName("redux-clicker")[0].click()
     }, [])
 
     const handleClick = () => {
@@ -21,18 +21,21 @@ const YourDistance = ({ userActivities, userProfile, changeUnits }) => {
         changeUnits()
     }
 
+
+
+
     const runDistance = () => {
-        const { miles, kms } = userActivities.runTotal
+        const { miles, kms } = runTotal
         return isToggled ? kms.toString() + " kms" : miles + " miles"
     }
 
     const rideDistance = () => {
-        const { miles, kms } = userActivities.rideTotal
+        const { miles, kms } = rideTotal
         return isToggled ? kms.toString() + " kms" : miles + " miles"
     }
 
     const swimDistance = () => {
-        const { miles, kms } = userActivities.rideTotal
+        const { miles, kms } = swimTotal
         return isToggled ? kms.toString() + " kms" : miles + " miles"
     }
 
@@ -80,11 +83,34 @@ const YourDistance = ({ userActivities, userProfile, changeUnits }) => {
             <p>Total: {combinedDistance()}</p>
 
             <button onClick={handleClick}>Convert</button>
-            <button onClick={handleReduxClick}>Convert with Redux</button>
 
             
             <div className="form-check form-switch">
                 <input className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" onClick={() => switchSport("running")}/>
+                <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Running</label>
+            </div>
+            <div className="form-check form-switch">
+                <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={() => switchSport("riding")}/>
+                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Riding</label>
+            </div>
+            <div className="form-check form-switch">
+                <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={() => switchSport("swimming")}/>
+                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Swimming</label>
+            </div>
+            
+            <br />
+            
+            <h4>Redux State</h4>
+            <p>Your running total: {runDistance()}</p>
+            <p>Your riding total: {rideDistance()}</p>
+            <p>Your swim total: {swimDistance()}</p>
+            <p>Total: {combinedDistance()}</p>
+
+            <button onClick={handleReduxClick}>Convert with Redux</button>
+
+            
+            <div className="form-check form-switch">
+                <input className="form-check-input redux-clicker" type="checkbox" id="flexSwitchCheckChecked" onClick={() => switchSport("running")}/>
                 <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Running</label>
             </div>
             <div className="form-check form-switch">
