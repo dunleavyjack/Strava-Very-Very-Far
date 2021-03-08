@@ -10,13 +10,26 @@ const setUserProfileReducer = (user=null, action) => {
 }
 
 const setUserActivitiesReducer = (userActivities=null, action) => {
-    if(action.type === 'SET_USER_ACTIVITIES'){
-        return action.payload
+    switch (action.type){
+        case 'SET_USER_ACTIVITIES':
+            return action.payload
+        default:
+            return userActivities
+    }    
+}
+
+const changeUnitsReducer = (metric=true, action) => {
+    switch(action.type){
+        case 'CHANGE_UNITS':
+            console.log('trying')
+            return !metric
+        default:
+            return metric
     }
-    return userActivities
 }
 
 export default combineReducers({
     userProfile: setUserProfileReducer,
-    userActivities: setUserActivitiesReducer
+    userActivities: setUserActivitiesReducer,
+    metric: changeUnitsReducer
 })

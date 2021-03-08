@@ -1,11 +1,10 @@
 import { React, useState, useEffect } from 'react'
 import { connect } from 'react-redux'
-// import { setUserActivities } from '../actions'
+import { changeUnits } from '../actions'
 
-const YourDistance = ({ userActivities, userProfile }) => {
+const YourDistance = ({ userActivities, userProfile, changeUnits }) => {
     // Toggle between miles and kms. Deafult is kms
     const [isToggled, setToggled] = useState(false)
-    
     
     const [unitsUsed, setUnitsUsed] = useState([])
     // const [totalDistance, setTotalDistance] = useState(parseInt(0))
@@ -18,19 +17,23 @@ const YourDistance = ({ userActivities, userProfile }) => {
         setToggled(!isToggled)
     }
 
+    const handleReduxClick = () => {
+        changeUnits()
+    }
+
     const runDistance = () => {
-        const { distanceInKms, distanceInMiles } = userActivities.all_run_totals
-        return isToggled ? distanceInKms.toString() + " kms" : distanceInMiles + " miles"
+        const { miles, kms } = userActivities.runTotal
+        return isToggled ? kms.toString() + " kms" : miles + " miles"
     }
 
     const rideDistance = () => {
-        const { distanceInKms, distanceInMiles } = userActivities.all_ride_totals
-        return isToggled ? distanceInKms.toString() + " kms" : distanceInMiles + " miles"
+        const { miles, kms } = userActivities.rideTotal
+        return isToggled ? kms.toString() + " kms" : miles + " miles"
     }
 
     const swimDistance = () => {
-        const { distanceInKms, distanceInMiles } = userActivities.all_swim_totals
-        return isToggled ? distanceInKms.toString() + " kms" : distanceInMiles + " miles"
+        const { miles, kms } = userActivities.rideTotal
+        return isToggled ? kms.toString() + " kms" : miles + " miles"
     }
 
     const combinedDistance = () => {
@@ -70,15 +73,14 @@ const YourDistance = ({ userActivities, userProfile }) => {
     return (
         <div>
             <h1>Hi, {userProfile.firstname}!</h1>
-            <h2>Your running total: {runDistance()}</h2>
-            <h2>Your riding total: {rideDistance()}</h2>
-            <h2>Your swim total: {swimDistance()}</h2>
-            <h2>Total: {combinedDistance()}</h2>
-            <h2>redux distance here</h2>
+            <h4>Local State</h4>
+            <p>Your running total: {runDistance()}</p>
+            <p>Your riding total: {rideDistance()}</p>
+            <p>Your swim total: {swimDistance()}</p>
+            <p>Total: {combinedDistance()}</p>
 
             <button onClick={handleClick}>Convert</button>
-            {/* <button onClick={addRiding}>Add Riding</button>
-            <button onClick={removeRiding}>Delete Riding</button> */}
+            <button onClick={handleReduxClick}>Convert with Redux</button>
 
             
             <div className="form-check form-switch">
@@ -102,14 +104,14 @@ const YourDistance = ({ userActivities, userProfile }) => {
 const mapStateToProps = state => {
     return {
         userActivities: state.userActivities,
-        userProfile: state.userProfile
+        userProfile: state.userProfile,
+        metric: state.metric
     }
 };
 
-export default connect(mapStateToProps,
-    {
-        setToggle
-    })(YourDistance)
+export default connect(mapStateToProps, {
+    changeUnits
+})(YourDistance)
 
 
 

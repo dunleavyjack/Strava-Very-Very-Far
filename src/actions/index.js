@@ -12,16 +12,8 @@ export const setUserProfile = data => {
     }
 }
 
-export const setUnits = data => {
+export const changeUnits = () => {
     return {
-        type: 'SET_UNITS',
-        payload: data
-    }
-}
-
-export const setToggle = data => {
-    return {
-        type: 'SET_TOGGLE',
-        payload: data
+        type: 'CHANGE_UNITS'
     }
 }
