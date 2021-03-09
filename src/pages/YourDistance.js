@@ -2,7 +2,7 @@ import { React, useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { changeUnits } from '../actions'
 
-const YourDistance = ({ userActivities: {runTotal, rideTotal, swimTotal}, userProfile, changeUnits }) => {
+const YourDistance = ({ userActivities: {runTotal, rideTotal, swimTotal}, userProfile, changeUnits, metric }) => {
     // Toggle between miles and kms. Deafult is kms
     const [isToggled, setToggled] = useState(false)
     
@@ -37,6 +37,21 @@ const YourDistance = ({ userActivities: {runTotal, rideTotal, swimTotal}, userPr
     const swimDistance = () => {
         const { miles, kms } = swimTotal
         return isToggled ? kms.toString() + " kms" : miles + " miles"
+    }
+
+    const runDistanceRedux = () => {
+        const { miles, kms } = runTotal
+        return metric ? kms.toString() + " kms" : miles + " miles"
+    }
+
+    const rideDistanceRedux = () => {
+        const { miles, kms } = rideTotal
+        return metric ? kms.toString() + " kms" : miles + " miles"
+    }
+
+    const swimDistanceRedux = () => {
+        const { miles, kms } = swimTotal
+        return metric ? kms.toString() + " kms" : miles + " miles"
     }
 
     const combinedDistance = () => {
@@ -101,9 +116,9 @@ const YourDistance = ({ userActivities: {runTotal, rideTotal, swimTotal}, userPr
             <br />
             
             <h4>Redux State</h4>
-            <p>Your running total: {runDistance()}</p>
-            <p>Your riding total: {rideDistance()}</p>
-            <p>Your swim total: {swimDistance()}</p>
+            <p>Your running total: {runDistanceRedux()}</p>
+            <p>Your riding total: {rideDistanceRedux()}</p>
+            <p>Your swim total: {swimDistanceRedux()}</p>
             <p>Total: {combinedDistance()}</p>
 
             <button onClick={handleReduxClick}>Convert with Redux</button>
