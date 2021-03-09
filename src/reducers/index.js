@@ -21,15 +21,24 @@ const setUserActivitiesReducer = (userActivities=null, action) => {
 const changeUnitsReducer = (metric=true, action) => {
     switch(action.type){
         case 'CHANGE_UNITS':
-            console.log('trying')
             return !metric
         default:
             return metric
     }
 }
 
+const setSportsReducer = (sports=["running"], action) => {
+    switch(action.type){
+        case 'ADD_SPORT':
+            return [...sports, action.payload]
+        default:
+            return sports
+    }
+}
+
 export default combineReducers({
     userProfile: setUserProfileReducer,
     userActivities: setUserActivitiesReducer,
-    metric: changeUnitsReducer
+    metric: changeUnitsReducer,
+    sports: setSportsReducer
 })

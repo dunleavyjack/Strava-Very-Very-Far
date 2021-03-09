@@ -1,8 +1,8 @@
 import { React, useState, useEffect } from 'react'
 import { connect } from 'react-redux'
-import { changeUnits } from '../actions'
+import { changeUnits, addSport, removeSport } from '../actions'
 
-const YourDistance = ({ userActivities: {runTotal, rideTotal, swimTotal}, userProfile, changeUnits, metric }) => {
+const YourDistance = ({ userActivities: {runTotal, rideTotal, swimTotal}, userProfile, changeUnits, addSport, sports, metric, removeSport }) => {
     // Toggle between miles and kms. Deafult is kms
     const [isToggled, setToggled] = useState(false)
     
@@ -70,17 +70,25 @@ const YourDistance = ({ userActivities: {runTotal, rideTotal, swimTotal}, userPr
         return result
     }
 
-    const addSport = (sport) => {
+    const addTheSport = (sport) => {
         setUnitsUsed([...unitsUsed, sport])
     }
 
-    const removeSport = (sport) => {
+    const removeTheSport = (sport) => {
         const newArray = unitsUsed.filter(unit => unit !== sport)
         setUnitsUsed(newArray)
     }
 
     const switchSport = (sport) => {
         if (unitsUsed.includes(sport)){
+            removeTheSport(sport)
+        } else {
+            addTheSport(sport)
+        }
+    }
+
+    const switchSportRedux = sport => {
+        if (sports.includes(sport)){
             removeSport(sport)
         } else {
             addSport(sport)
@@ -125,15 +133,15 @@ const YourDistance = ({ userActivities: {runTotal, rideTotal, swimTotal}, userPr
 
             
             <div className="form-check form-switch">
-                <input className="form-check-input redux-clicker" type="checkbox" id="flexSwitchCheckChecked" onClick={() => switchSport("running")}/>
+                <input className="form-check-input redux-clicker" type="checkbox" id="flexSwitchCheckChecked" onClick={() => switchSportRedux("running")}/>
                 <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Running</label>
             </div>
             <div className="form-check form-switch">
-                <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={() => switchSport("riding")}/>
+                <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={() => switchSportRedux("riding")}/>
                 <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Riding</label>
             </div>
             <div className="form-check form-switch">
-                <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={() => switchSport("swimming")}/>
+                <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={() => switchSportRedux("swimming")}/>
                 <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Swimming</label>
             </div>
 
@@ -146,12 +154,15 @@ const mapStateToProps = state => {
     return {
         userActivities: state.userActivities,
         userProfile: state.userProfile,
-        metric: state.metric
+        metric: state.metric,
+        sports: state.sports
     }
 };
 
 export default connect(mapStateToProps, {
-    changeUnits
+    changeUnits,
+    addSport,
+    removeSport
 })(YourDistance)
 
 
