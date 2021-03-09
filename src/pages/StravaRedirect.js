@@ -25,20 +25,23 @@ class StravaRedirect extends React.Component {
 
                 // Axios request to get users info
                 const userActivities = await getUserData(userID, accessToken)
-                
+            
                 this.props.setUserActivities({
                     runTotal: {
                         kms: (userActivities.data.all_run_totals.distance / 1000).toFixed(2),
-                        miles: convertToMiles(userActivities.data.all_run_totals.distance).toFixed(2)
+                        miles: convertToMiles(userActivities.data.all_run_totals.distance).toFixed(2),
+                        count: userActivities.data.all_run_totals.count 
                     },
                     rideTotal: {
                         kms: (userActivities.data.all_ride_totals.distance / 1000).toFixed(2),
-                        miles: convertToMiles(userActivities.data.all_ride_totals.distance).toFixed(2)
+                        miles: convertToMiles(userActivities.data.all_ride_totals.distance).toFixed(2),
+                        count: userActivities.data.all_ride_totals.count 
                     },
                     swimTotal: {
                         kms: (userActivities.data.all_swim_totals.distance / 1000).toFixed(2),
-                        miles: convertToMiles(userActivities.data.all_swim_totals.distance).toFixed(2)
-                    },
+                        miles: convertToMiles(userActivities.data.all_swim_totals.distance).toFixed(2),
+                        count: userActivities.data.all_swim_totals.count 
+                    }
                 })            
                 
                 // Once complete, go to display page
