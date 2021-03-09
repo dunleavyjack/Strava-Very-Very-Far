@@ -1,8 +1,8 @@
 import { React, useState, useEffect } from 'react'
 import { connect } from 'react-redux'
-import { changeUnits, addSport, removeSport } from '../actions'
+import { changeUnits, addSport, removeSport, setTotalDistance } from '../actions'
 
-const YourDistance = ({ userActivities: {runTotal, rideTotal, swimTotal}, userProfile, changeUnits, addSport, sports, metric, removeSport }) => {
+const YourDistance = ({ userActivities: {runTotal, rideTotal, swimTotal}, userProfile, changeUnits, addSport, sports, metric, removeSport, setTotalDistance }) => {
     // Toggle between miles and kms. Deafult is kms
     const [isToggled, setToggled] = useState(false)
     
@@ -70,6 +70,23 @@ const YourDistance = ({ userActivities: {runTotal, rideTotal, swimTotal}, userPr
         return result
     }
 
+    const combinedDistanceRedux = () => {
+        let result = 0
+        if (sports.includes("running")) {
+            result = result + parseInt(runDistanceRedux())
+        }
+
+        if (sports.includes("riding")) {
+            result = result + parseInt(rideDistanceRedux())
+        }
+
+        if (sports.includes("swimming")) {
+            result = result + parseInt(swimDistanceRedux())
+        }
+        setTotalDistance(result)
+        return result
+    }
+
     const addTheSport = (sport) => {
         setUnitsUsed([...unitsUsed, sport])
     }
@@ -86,6 +103,7 @@ const YourDistance = ({ userActivities: {runTotal, rideTotal, swimTotal}, userPr
             addTheSport(sport)
         }
     }
+
 
     const switchSportRedux = sport => {
         if (sports.includes(sport)){
@@ -127,7 +145,7 @@ const YourDistance = ({ userActivities: {runTotal, rideTotal, swimTotal}, userPr
             <p>Your running total: {runDistanceRedux()}</p>
             <p>Your riding total: {rideDistanceRedux()}</p>
             <p>Your swim total: {swimDistanceRedux()}</p>
-            <p>Total: {combinedDistance()}</p>
+            <p>Total: {combinedDistanceRedux()}</p>
 
             <button onClick={handleReduxClick}>Convert with Redux</button>
 
@@ -155,14 +173,15 @@ const mapStateToProps = state => {
         userActivities: state.userActivities,
         userProfile: state.userProfile,
         metric: state.metric,
-        sports: state.sports
+        sports: state.sports,
     }
 };
 
 export default connect(mapStateToProps, {
     changeUnits,
     addSport,
-    removeSport
+    removeSport,
+    setTotalDistance
 })(YourDistance)
 
 

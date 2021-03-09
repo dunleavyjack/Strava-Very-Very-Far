@@ -12,22 +12,29 @@ export const setUserProfile = data => {
     }
 }
 
+export const setTotalDistance = data => {
+    return {
+        type: 'SET_TOTAL_DISTANCE',
+        payload: data
+    }
+}
+
 export const changeUnits = () => {
     return {
         type: 'CHANGE_UNITS'
     }
 }
 
-export const addSport = sportData => {
+export const addSport = sport => {
     return {
         type: 'ADD_SPORT',
-        payload: sportData
+        payload: sport
     }
 }
 
-export const removeSport = sportData => {
+export const removeSport = sport => {
     return {
         type: 'REMOVE_SPORT',
-        payload: sportData
+        payload: sport
     }
 }
