@@ -6,9 +6,10 @@ const handleLogin = () => {
 
 const Home = () => {
     return (
-        <div>
-            <h1>Home</h1>
-            <button onClick={handleLogin}>Connect with Strava</button>
+        <div className="d-flex justify-content-center align-items-center text-center content-body">
+            <div>
+                <button onClick={handleLogin}>Connect with Strava</button>
+            </div>
         </div>
     )
 }

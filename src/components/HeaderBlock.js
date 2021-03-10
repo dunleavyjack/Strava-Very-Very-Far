@@ -1,10 +1,13 @@
 import React from 'react'
-import { CircularProfilePic } from './CircularProfilePic'
+import CircularProfilePic from './CircularProfilePic'
 
 const HeaderBlock = ({imageURL}) => {
     return (
-        <CircularProfilePic imageURL={imageURL} />
+        <div className="mt-5 light-gray">
+            <CircularProfilePic imageURL={imageURL} />
+        </div>
     )
 };
 
 export default HeaderBlock
+

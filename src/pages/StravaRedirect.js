@@ -2,6 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux'
 import { setUserProfile, setUserActivities } from '../actions'
+import Loading from '../components/Loading'
 import { cleanUpAuthToken, testAuthGetter, getUserData, convertToMiles } from '../utils/functions'
 
 class StravaRedirect extends React.Component {
@@ -57,7 +58,7 @@ class StravaRedirect extends React.Component {
     render() {
         return (
             <div>
-                Loading...
+                <Loading text={"Talking to Strava."}/>
             </div>
         )
     };

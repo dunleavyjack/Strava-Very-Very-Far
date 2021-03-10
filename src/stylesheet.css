@@ -1,0 +1,33 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.content-body{
+    min-height: 92.5vh;
+}
+
+.circular--portrait {
+    position: relative;
+    width: 30vh;
+    height: 30vh;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+.circular--portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+}
+
+.navbar {
+    background-color: white !important;
+}
+
+.light-gray {
+    background-color: lightgray;
+    width: 90%;
+    border-radius: 50px;
+    height: 395px;
+}

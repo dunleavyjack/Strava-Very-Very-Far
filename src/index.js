@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux';
 
+import './stylesheet.css'
 import AppRouter from './router/AppRouter';
 import reducers from './reducers';
 

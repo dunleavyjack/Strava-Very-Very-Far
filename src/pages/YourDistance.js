@@ -1,6 +1,7 @@
 import { React, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { changeUnits, addSport, removeSport, setTotalDistance } from '../actions'
+import BlockList from '../components/BlockList'
 
 const YourDistance = ({ userActivities: {runTotal, rideTotal, swimTotal}, userProfile, changeUnits, addSport, sports, metric, removeSport, setTotalDistance }) => {
     
@@ -56,6 +57,8 @@ const YourDistance = ({ userActivities: {runTotal, rideTotal, swimTotal}, userPr
 
     return (
         <div>            
+            <BlockList />
+              
             <img src={userProfile.profile} alt="profile"></img>
             <h2>Hi, {userProfile.firstname}!</h2>
             <p>Your running total: {runDistance()}</p>
@@ -85,7 +88,6 @@ const YourDistance = ({ userActivities: {runTotal, rideTotal, swimTotal}, userPr
                 <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={() => toggleSport("swimming")}/>
                 <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Swimming</label>
             </div>
-
         </div>
     )
 }
