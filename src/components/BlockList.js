@@ -5,7 +5,7 @@ import HeaderBlock from './HeaderBlock'
 const BlockList = ({ userProfile }) => {
     return (
         <div className="d-flex justify-content-center align-items-center text-center mt-3">
-            <HeaderBlock imageURL={userProfile.profile}/>
+            <HeaderBlock />
         </div>
     )
 }

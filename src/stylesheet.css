@@ -2,6 +2,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
 .content-body{
     min-height: 92.5vh;
 }
@@ -26,8 +27,8 @@
 }
 
 .light-gray {
-    background-color: lightgray;
+    background-color: #f7f7f7;
     width: 90%;
     border-radius: 50px;
-    height: 395px;
+    height: 400px;
 }
