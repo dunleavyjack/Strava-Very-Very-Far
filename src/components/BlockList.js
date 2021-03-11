@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import HeaderBlock from './HeaderBlock'
-import InfoBlock from './InfoBlock'
+import InfoImageBlock from './InfoImageBlock'
+import InfoTextBlock from './InfoTextBlock'
 
 import earth from '../assets/earth.jpg'
 import track from '../assets/track.jpg'
@@ -11,8 +12,9 @@ const BlockList = ({ userProfile }) => {
         <div className="d-flex justify-content-center align-items-center text-center mt-3 w-100">
             <div className="w-100 px-4">
                     <HeaderBlock />
-                    <InfoBlock imageSRC={earth}/>
-                    <InfoBlock imageSRC={track}/>
+                    <InfoTextBlock />
+                    <InfoImageBlock imageSRC={earth}/>
+                    <InfoImageBlock imageSRC={track}/>
             </div>
         </div>
     )
