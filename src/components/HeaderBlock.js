@@ -54,11 +54,29 @@ const HeaderBlock = ({ userActivities: { runTotal, rideTotal, swimTotal }, userP
         }
     }
 
+    const conversionButton = () => {
+        return metric ? "Use Miles" : "Use Kilometers"
+    }
+
     return (
         <div className="mt-5 light-gray">
             <CircularProfilePic imageURL={userProfile.profile} />
-            <button onClick={handleClick}>Convert with Redux</button>            
-            <button type="button" className="btn btn-primary redux-clicker" data-bs-toggle="button" aria-pressed="false" autocomplete="off">
+            <button onClick={handleClick}>{conversionButton()}</button>
+            <div className="form-check form-switch">
+                <input className="form-check-input redux-clicker" type="checkbox" id="flexSwitchCheckChecked" onClick={() => toggleSport("running")} />
+                <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Running</label>
+            </div>
+            <div className="form-check form-switch">
+                <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={() => toggleSport("riding")} />
+                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Riding</label>
+            </div>
+            <div className="form-check form-switch">
+                <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={() => toggleSport("swimming")} />
+                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Swimming</label>
+            </div>
+
+
+            {/* <button type="button" className="btn btn-primary redux-clicker" data-bs-toggle="button" aria-pressed="false" autocomplete="off">
                 &#127939;
             </button>
             <button type="button" className="btn btn-primary" data-bs-toggle="button" aria-pressed="false" autocomplete="off">
@@ -66,7 +84,7 @@ const HeaderBlock = ({ userActivities: { runTotal, rideTotal, swimTotal }, userP
             </button>
             <button type="button" className="btn btn-primary" data-bs-toggle="button" aria-pressed="false" autocomplete="off">
                 &#128692;
-            </button>
+            </button> */}
 
 
             {/* <div className="form-check form-switch">
