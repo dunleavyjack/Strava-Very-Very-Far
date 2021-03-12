@@ -3,18 +3,52 @@ import { connect } from 'react-redux'
 import HeaderBlock from './HeaderBlock'
 import InfoImageBlock from './InfoImageBlock'
 import InfoTextBlock from './InfoTextBlock'
-
 import earth from '../assets/earth.jpg'
 import track from '../assets/track.jpg'
 
-const BlockList = ({ userProfile }) => {
+const BlockList = ({ userProfile, userActivities, metric, sports }) => {
+    const totalRunDisplay = () => {
+        if (sports.includes("running"))
+            return (
+                <InfoTextBlock
+                    text={"Your Running Total"}
+                    distance={userActivities.runTotal}
+                    usingMetric={metric}
+                />
+            )
+    }
+
+    const totalRideDisplay = () => {
+        if (sports.includes("running"))
+            return (
+                <InfoTextBlock
+                    text={"Your Riding Total"}
+                    distance={userActivities.rideTotal}
+                    usingMetric={metric}
+                />
+            )
+    }
+
+    const totalSwimDisplay = () => {
+        if (sports.includes("running"))
+            return (
+                <InfoTextBlock
+                    text={"Your Swimming Total"}
+                    distance={userActivities.swimTotal}
+                    usingMetric={metric}
+                />
+            )
+    }
+
     return (
         <div className="d-flex justify-content-center align-items-center text-center mt-3 w-100">
             <div className="w-100 px-4">
-                    <HeaderBlock />
-                    <InfoTextBlock />
-                    <InfoImageBlock imageSRC={earth}/>
-                    <InfoImageBlock imageSRC={track}/>
+                <HeaderBlock />
+                {totalRunDisplay()}
+                {totalRideDisplay()}
+                {totalSwimDisplay()}
+                <InfoImageBlock imageSRC={earth} number={'67.98%'} text={"Around the Earth"} />
+                <InfoImageBlock imageSRC={track} number={10000} text={"Laps on a Track"} />
             </div>
         </div>
     )
