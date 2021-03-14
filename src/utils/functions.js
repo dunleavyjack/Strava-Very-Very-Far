@@ -43,3 +43,7 @@ export const getUserData = async (userID, accessToken) => {
 export const convertToMiles = meters => {
     return meters * 0.621371 / 1000
 }
+
+export const trackLaps = (kms) => {
+    return (kms * 2.5).toFixed(2)
+}

@@ -5,6 +5,7 @@ import InfoImageBlock from './InfoImageBlock'
 import InfoTextBlock from './InfoTextBlock'
 import earth from '../assets/earth.jpg'
 import track from '../assets/track.jpg'
+import { trackLaps } from '../utils/functions'
 
 const BlockList = ({ userProfile, userActivities, metric, sports }) => {
     const totalRunDisplay = () => {
@@ -19,7 +20,7 @@ const BlockList = ({ userProfile, userActivities, metric, sports }) => {
     }
 
     const totalRideDisplay = () => {
-        if (sports.includes("running"))
+        if (sports.includes("riding"))
             return (
                 <InfoTextBlock
                     text={"Your Riding Total"}
@@ -30,7 +31,7 @@ const BlockList = ({ userProfile, userActivities, metric, sports }) => {
     }
 
     const totalSwimDisplay = () => {
-        if (sports.includes("running"))
+        if (sports.includes("swimming"))
             return (
                 <InfoTextBlock
                     text={"Your Swimming Total"}
@@ -48,7 +49,7 @@ const BlockList = ({ userProfile, userActivities, metric, sports }) => {
                 {totalRideDisplay()}
                 {totalSwimDisplay()}
                 <InfoImageBlock imageSRC={earth} number={'67.98%'} text={"Around the Earth"} />
-                <InfoImageBlock imageSRC={track} number={10000} text={"Laps on a Track"} />
+                <InfoImageBlock imageSRC={track} number={trackLaps(userActivities.runTotal.kms)} text={"Laps on a Track"} />
             </div>
         </div>
     )

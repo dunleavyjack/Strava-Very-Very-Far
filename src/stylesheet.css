@@ -49,3 +49,17 @@
 .pos-absolute{
     position: relative;
 }
+
+.login-button{
+    cursor: pointer; 
+}
+
+.person-logo{
+    max-width:230px;
+    max-height:230px;
+}
+
+/* .image-container{
+    text-align: center;
+    display: block;
+} */
