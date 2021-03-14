@@ -11,11 +11,15 @@ const Home = () => {
     return (
         <div className="d-flex justify-content-center align-items-center text-center content-body">
             <div>
-                <img src={personLogo} alt="logo"  className="person-logo text-center"></img>
-                <h1 className="d-block">VERY, VERY FAR</h1>
+                <img src={personLogo} alt="logo" className="person-logo text-center"></img>
+                <title className="d-block bold-poppins">VERY, VERY FAR</title>
                 <h2 className="d-block">Your activities, summed up.</h2>
-                <img src={stravaButton} onClick={handleLogin} alt="login" className="login-button mb-3"></img>
-                <img src={demoButton} alt="demo login" className="login-button"></img>
+                <div>
+                    <img src={stravaButton} onClick={handleLogin} alt="login" className="login-button mb-3"></img>
+                </div>
+                <div>
+                    <img src={demoButton} alt="demo login" className="login-button"></img>
+                </div>
             </div>
         </div>
     )

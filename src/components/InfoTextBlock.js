@@ -12,12 +12,6 @@ const InfoTextBlock = ({text, distance, usingMetric}) => {
                 <h5 className="bold-poppins">{totalDistance}</h5>
                 <h5 className="sport-info-black">{units}</h5> 
             </div>
-            {/* <h1 className="centered-text">
-                <h5 className="sport-header-text">{text}</h5>
-                {totalDistance}
-                <br />
-                {units}
-            </h1>  */}
         </div>
     )
 };

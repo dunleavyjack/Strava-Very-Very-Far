@@ -45,12 +45,11 @@ const BlockList = ({ userProfile, userActivities, metric, sports }) => {
         <div className="d-flex justify-content-center align-items-center text-center mt-3 w-100">
             <div className="w-100 px-4">
                 <HeaderBlock />
-                <h1 className="bold-poppins mt-5">Your Totals</h1>
+                <h1 className="info-title mt-5">Your Totals</h1>
                 {totalRunDisplay()}
                 {totalRideDisplay()}
                 {totalSwimDisplay()}
-                <h1 className="bold-poppins mt-5">How far is that?</h1>
-
+                <h1 className="info-title mt-5">How far is that?</h1>
                 <InfoImageBlock imageSRC={earth} number={'67.98%'} text={"Around the Earth"} />
                 <InfoImageBlock imageSRC={track} number={trackLaps(userActivities.runTotal.kms)} text={"Laps on a Track"} />
             </div>

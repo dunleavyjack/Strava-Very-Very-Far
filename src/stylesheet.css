@@ -1,5 +1,6 @@
 * {
     font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
 
 
@@ -47,6 +48,15 @@
     font-style: normal;
     font-weight: 600;
     font-size: 80px;
+    line-height: 120px;
+    /* font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300))); */
+}
+
+.info-title{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 60px;
     line-height: 120px;
     /* font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300))); */
 }
