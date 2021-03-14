@@ -50,7 +50,7 @@ const BlockList = ({ userProfile, userActivities, metric, sports }) => {
                 {totalRideDisplay()}
                 {totalSwimDisplay()}
                 <h1 className="info-title mt-5">How far is that?</h1>
-                <InfoImageBlock imageSRC={earth} number={'67.98%'} text={"Around the Earth"} />
+                <InfoImageBlock imageSRC={earth} number={'67.97%'} text={"Around the Earth"} />
                 <InfoImageBlock imageSRC={track} number={trackLaps(userActivities.runTotal.kms)} text={"Laps on a Track"} />
             </div>
         </div>
