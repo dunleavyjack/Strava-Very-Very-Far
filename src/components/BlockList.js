@@ -12,7 +12,7 @@ const BlockList = ({ userProfile, userActivities, metric, sports }) => {
         if (sports.includes("running"))
             return (
                 <InfoTextBlock
-                    text={"Your Running Total"}
+                    text={"Running"}
                     distance={userActivities.runTotal}
                     usingMetric={metric}
                 />
@@ -23,7 +23,7 @@ const BlockList = ({ userProfile, userActivities, metric, sports }) => {
         if (sports.includes("riding"))
             return (
                 <InfoTextBlock
-                    text={"Your Riding Total"}
+                    text={"Riding"}
                     distance={userActivities.rideTotal}
                     usingMetric={metric}
                 />
@@ -34,7 +34,7 @@ const BlockList = ({ userProfile, userActivities, metric, sports }) => {
         if (sports.includes("swimming"))
             return (
                 <InfoTextBlock
-                    text={"Your Swimming Total"}
+                    text={"Swimming"}
                     distance={userActivities.swimTotal}
                     usingMetric={metric}
                 />
@@ -45,9 +45,12 @@ const BlockList = ({ userProfile, userActivities, metric, sports }) => {
         <div className="d-flex justify-content-center align-items-center text-center mt-3 w-100">
             <div className="w-100 px-4">
                 <HeaderBlock />
+                <h1 className="bold-poppins mt-5">Your Totals</h1>
                 {totalRunDisplay()}
                 {totalRideDisplay()}
                 {totalSwimDisplay()}
+                <h1 className="bold-poppins mt-5">How far is that?</h1>
+
                 <InfoImageBlock imageSRC={earth} number={'67.98%'} text={"Around the Earth"} />
                 <InfoImageBlock imageSRC={track} number={trackLaps(userActivities.runTotal.kms)} text={"Laps on a Track"} />
             </div>

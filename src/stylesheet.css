@@ -26,8 +26,41 @@
     background-color: white !important;
 }
 
+.sport-info-orange{
+    text-align: left !important;
+    color: #EE5535;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 0%;
+}
+
+.sport-info-black{
+    text-align: right !important;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 0%;
+
+}
+
+.bold-poppins{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 120px;
+    /* font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300))); */
+}
+
 .light-gray {
     background-color: #f7f7f7;
+    border-radius: 50px;
+    height: 400px;
+}
+
+.orange-border {
+    background: #FFFFFF;
+    border: 4px solid #EE5535;
+    box-sizing: border-box;
     border-radius: 50px;
     height: 400px;
 }
