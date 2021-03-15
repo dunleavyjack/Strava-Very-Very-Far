@@ -115,6 +115,8 @@
 
 .login-button{
     cursor: pointer; 
+    width: 300px;
+    height: auto;
 }
 
 .person-logo{
