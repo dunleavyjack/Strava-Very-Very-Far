@@ -55,6 +55,13 @@
     /* font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300))); */
 }
 
+.bold-poppins-small{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+}
+
 .info-title{
     font-family: Poppins;
     font-style: normal;
