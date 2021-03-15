@@ -6,6 +6,7 @@ import InfoTextBlock from './InfoTextBlock'
 import earth from '../assets/earth.jpg'
 import track from '../assets/track.jpg'
 import { trackLaps } from '../utils/functions'
+import SelectionBlock from './SelectionBlock'
 
 const BlockList = ({ userProfile, userActivities, metric, sports }) => {
     const totalRunDisplay = () => {
@@ -45,6 +46,7 @@ const BlockList = ({ userProfile, userActivities, metric, sports }) => {
         <div className="d-flex justify-content-center align-items-center text-center mt-3 w-100">
             <div className="w-100 px-4">
                 <HeaderBlock />
+                <SelectionBlock />
                 <h1 className="info-title mt-5">Your Totals</h1>
                 {totalRunDisplay()}
                 {totalRideDisplay()}

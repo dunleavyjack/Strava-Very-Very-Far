@@ -10,7 +10,7 @@ const handleLogin = () => {
 const Home = () => {
     return (
         <div className="d-flex justify-content-center align-items-center text-center content-body">
-            <div>
+            <div className="mt-5">
                 <img src={personLogo} alt="logo" className="person-logo text-center"></img>
                 <title className="d-block bold-poppins">VERY, VERY FAR</title>
                 <h2 className="d-block">Your activities, summed up.</h2>
