@@ -59,19 +59,10 @@ const SelectionBlock = ({ userActivities: { runTotal, rideTotal, swimTotal }, us
 
     return (
         <div className="selection-block mt-5">
+            <button className="redux-clicker" onClick={() => toggleSport("running")}>Running</button>
+            <button onClick={() => toggleSport("riding")}>Riding</button>
+            <button onClick={() => toggleSport("swimming")}>Swimming</button>
             <button onClick={handleClick}>{conversionButton()}</button>
-            <div className="form-check form-switch">
-                <input className="form-check-input redux-clicker" type="checkbox" id="flexSwitchCheckChecked" onClick={() => toggleSport("running")} />
-                <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Running</label>
-            </div>
-            <div className="form-check form-switch">
-                <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={() => toggleSport("riding")} />
-                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Riding</label>
-            </div>
-            <div className="form-check form-switch">
-                <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={() => toggleSport("swimming")} />
-                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Swimming</label>
-            </div>
         </div>
     );
 };
