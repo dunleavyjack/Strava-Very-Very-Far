@@ -12,7 +12,6 @@ const Home = () => {
         <div className="d-flex justify-content-center align-items-center text-center content-body">
             <div className="mt-5">
                 <img src={personLogo} alt="logo" className="person-logo text-center"></img>
-                {/* <title className="d-block bold-poppins purple-text">VERY, VERY FAR</title> */}
                 <h2 className="bold-poppins-small">Your activities, summed up.</h2>
                 <div>
                     <img src={stravaButton} onClick={handleLogin} alt="login" className="login-button mb-3"></img>
