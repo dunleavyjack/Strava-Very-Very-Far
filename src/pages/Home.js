@@ -12,7 +12,7 @@ const Home = () => {
         <div className="d-flex justify-content-center align-items-center text-center content-body">
             <div className="mt-5">
                 <img src={personLogo} alt="logo" className="person-logo text-center"></img>
-                <h2 className="bold-poppins-small">Your activities, summed up.</h2>
+                <h2 className="bold-poppins-small mt-3 mb-3">Your activities, summed up.</h2>
                 <div>
                     <img src={stravaButton4X} onClick={handleLogin} alt="login" className="login-button mb-3"></img>
                 </div>

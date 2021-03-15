@@ -2,7 +2,10 @@ import { React, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { changeUnits, addSport, removeSport, setTotalDistance } from '../actions'
 
-const SelectionBlock = ({ userActivities: { runTotal, rideTotal, swimTotal }, userProfile, changeUnits, addSport, sports, metric, removeSport, setTotalDistance }) => {
+const SelectionBlock = ({ userActivities: { runTotal, rideTotal, swimTotal }, changeUnits, addSport, sports, metric, removeSport, setTotalDistance }) => {
+    
+    
+    
     // Select running as default activity
     useEffect(() => {
         document.getElementsByClassName("redux-clicker")[0].click()
@@ -59,10 +62,10 @@ const SelectionBlock = ({ userActivities: { runTotal, rideTotal, swimTotal }, us
 
     return (
         <div className="selection-block mt-5">
-            <button className="redux-clicker" onClick={() => toggleSport("running")}>Running</button>
-            <button onClick={() => toggleSport("riding")}>Riding</button>
-            <button onClick={() => toggleSport("swimming")}>Swimming</button>
-            <button onClick={handleClick}>{conversionButton()}</button>
+                <button className="redux-clicker mt-5" onClick={() => toggleSport("running")}>Running</button>
+                <button onClick={() => toggleSport("riding")}>Riding</button>
+                <button onClick={() => toggleSport("swimming")}>Swimming</button>
+                <button className="mb-5" onClick={handleClick}>{conversionButton()}</button>
         </div>
     );
 };
