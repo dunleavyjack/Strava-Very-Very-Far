@@ -42,18 +42,32 @@ const BlockList = ({ userProfile, userActivities, metric, sports }) => {
             )
     }
 
+    // If no sport selected, return "Choose a sport" message
+    const pageDisplay = () => {
+        if (sports.length === 0) {
+            return <h1 className="info-title mt-5">Select a Sport</h1>
+
+        } else {
+            return (
+                <>
+                    <h1 className="info-title mt-5">Your Totals</h1>
+                    {totalRunDisplay()}
+                    {totalRideDisplay()}
+                    {totalSwimDisplay()}
+                    <h1 className="info-title mt-5">How far is that?</h1>
+                    <InfoImageBlock imageSRC={earth} number={'67.97%'} text={"Around the Earth"} />
+                    <InfoImageBlock imageSRC={track} number={trackLaps(userActivities.runTotal.kms)} text={"Laps on a Track"} />
+                </>
+            )
+        }
+    }
+
     return (
         <div className="d-flex justify-content-center align-items-center text-center mt-3 w-100">
             <div className="w-100 px-4">
                 <HeaderBlock />
                 <SelectionBlock />
-                <h1 className="info-title mt-5">Your Totals</h1>
-                {totalRunDisplay()}
-                {totalRideDisplay()}
-                {totalSwimDisplay()}
-                <h1 className="info-title mt-5">How far is that?</h1>
-                <InfoImageBlock imageSRC={earth} number={'67.97%'} text={"Around the Earth"} />
-                <InfoImageBlock imageSRC={track} number={trackLaps(userActivities.runTotal.kms)} text={"Laps on a Track"} />
+                {pageDisplay()}
             </div>
         </div>
     )

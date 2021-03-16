@@ -8,9 +8,8 @@ const SelectionBlock = ({ changeUnits, metric }) => {
         changeUnits()
     }
 
-
     const conversionButton = () => {
-        return metric ? "Kms" : "Miles"
+        return metric ? "Change to Miles" : "Change to Kms"
     }
 
     return (
@@ -18,7 +17,7 @@ const SelectionBlock = ({ changeUnits, metric }) => {
                 <SportButton text={"running"}/>
                 <SportButton text={"riding"}/>
                 <SportButton text={"swimming"}/>
-                <button className="button-purple mt-3 mb-3" onClick={handleClick}>{conversionButton()}</button>
+                <button className="button-purple mt-3 mb-3 ms-3" onClick={handleClick}>{conversionButton()}</button>
         </div>
     );
 };
