@@ -14,8 +14,8 @@
 
 .circular--portrait {
     position: relative;
-    width: 30vh;
-    height: 30vh;
+    width: 12rem;
+    height: 12rem;
     overflow: hidden;
     border-radius: 50%;
   }
@@ -189,4 +189,8 @@
     touch-action: manipulation;
     cursor: pointer;
     border: 4px solid transparent;
+}
+
+.purple{
+    color: #28259B !important;
 }

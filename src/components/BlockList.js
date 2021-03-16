@@ -45,8 +45,7 @@ const BlockList = ({ userProfile, userActivities, metric, sports }) => {
     // If no sport selected, return "Choose a sport" message
     const pageDisplay = () => {
         if (sports.length === 0) {
-            return <h1 className="info-title mt-5">Select a Sport</h1>
-
+            return <h1 className="info-title mt-5 content-body">Select a Sport to Continue</h1>
         } else {
             return (
                 <>

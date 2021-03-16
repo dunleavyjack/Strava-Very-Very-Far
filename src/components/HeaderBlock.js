@@ -9,7 +9,7 @@ const HeaderBlock = ({ userActivities: { runTotal, rideTotal, swimTotal }, userP
     return (
         <div className="mt-5 light-gray">
             <CircularProfilePic imageURL={userProfile.profile} />
-            <h1 className="bold-poppins">Hi, {userProfile.firstname}</h1>
+            <h1 className="bold-poppins purple mt-4">Hi, {userProfile.firstname}</h1>
         </div>
     )
 };
