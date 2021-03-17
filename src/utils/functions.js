@@ -48,15 +48,17 @@ export const convertToMiles = meters => {
 // Distance Functions
 
 export const trackLaps = kms => {
-    return (kms * 2.5).toFixed(0)
+    return fixNumber(kms * 2.5)
 }
 
 export const earthLaps = kms => {
     const earthCircumfrence = 40075; // In kms
     const percentAround = kms / earthCircumfrence * 100
-    return percentAround.toFixed(0) + "%"
+    return fixNumber(percentAround) + "%"
 }
 
-console.log(earthLaps(100))
+const fixNumber = x => {
+    return x.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 
