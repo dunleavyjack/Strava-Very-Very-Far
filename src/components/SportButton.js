@@ -10,33 +10,18 @@ const SportButton = ({ userActivities: { runTotal, rideTotal, swimTotal }, addSp
         document.getElementsByClassName("redux-clicker")[0].click()
     }, [])
 
-    const runDistance = () => {
-        const { miles, kms } = runTotal
-        return metric ? kms.toString() + " kms" : miles + " miles"
-    }
-
-    const rideDistance = () => {
-        const { miles, kms } = rideTotal
-        return metric ? kms.toString() + " kms" : miles + " miles"
-    }
-
-    const swimDistance = () => {
-        const { miles, kms } = swimTotal
-        return metric ? kms.toString() + " kms" : miles + " miles"
-    }
-
     const combinedDistance = () => {
         let result = 0
         if (sports.includes("running")) {
-            result = result + parseInt(runDistance())
+            result = result + parseInt(runTotal.kms)
         }
 
         if (sports.includes("riding")) {
-            result = result + parseInt(rideDistance())
+            result = result + parseInt(rideTotal.kms)
         }
 
         if (sports.includes("swimming")) {
-            result = result + parseInt(swimDistance())
+            result = result + parseInt(swimTotal.kms)
         }
         setTotalDistance(result)
         return result
