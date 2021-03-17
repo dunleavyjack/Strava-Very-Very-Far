@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { changeUnits, addSport, removeSport, setTotalDistance } from '../actions'
 import BlockList from '../components/BlockList'
 
-const YourDistance = ({ userActivities: {runTotal, rideTotal, swimTotal}, userProfile, changeUnits, addSport, sports, metric, removeSport, setTotalDistance }) => {
+const YourDistance = ({ userActivities: { runTotal, rideTotal, swimTotal }, userProfile, changeUnits, addSport, sports, metric, removeSport, setTotalDistance }) => {
     return (
-        <div>            
+        <div>
             <BlockList />
         </div>
     )

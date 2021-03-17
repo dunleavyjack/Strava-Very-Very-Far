@@ -14,11 +14,11 @@ const SelectionBlock = ({ changeUnits, metric }) => {
 
     return (
         <div className="selection-block mt-5">
-                <h5 className="selection-text">Choose sports to view</h5>
-                <SportButton text={"running"}/>
-                <SportButton text={"riding"}/>
-                <SportButton text={"swimming"}/>
-                <button className="button-purple mt-3 mb-3 ms-3" onClick={handleClick}>{conversionButton()}</button>
+            <h5 className="selection-text">Choose sports to view</h5>
+            <SportButton text={"running"} />
+            <SportButton text={"riding"} />
+            <SportButton text={"swimming"} />
+            <button className="button-purple mt-3 mb-3 ms-3" onClick={handleClick}>{conversionButton()}</button>
         </div>
     );
 };

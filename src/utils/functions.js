@@ -33,7 +33,7 @@ export const testAuthGetter = async (authTok) => {
 
 export const getUserData = async (userID, accessToken) => {
     try {
-        const response = await axios.get(`https://www.strava.com/api/v3/athletes/${userID}/stats`, { headers: { Authorization: `Bearer ${accessToken}`}})
+        const response = await axios.get(`https://www.strava.com/api/v3/athletes/${userID}/stats`, { headers: { Authorization: `Bearer ${accessToken}` } })
         return response
     } catch (error) {
         console.log(error)
@@ -52,8 +52,8 @@ export const trackLaps = kms => {
 }
 
 export const earthLaps = kms => {
-	const earthCircumfrence = 40075; // In kms
-    const percentAround = kms/earthCircumfrence * 100
+    const earthCircumfrence = 40075; // In kms
+    const percentAround = kms / earthCircumfrence * 100
     return percentAround.toFixed(0) + "%"
 }
 

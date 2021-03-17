@@ -1,4 +1,4 @@
-import { React} from 'react'
+import { React } from 'react'
 import CircularProfilePic from './CircularProfilePic'
 import { connect } from 'react-redux'
 import { changeUnits, addSport, removeSport, setTotalDistance } from '../actions'
@@ -27,6 +27,6 @@ export default connect(mapStateToProps, {
     changeUnits,
     addSport,
     removeSport,
-    setTotalDistance
+    setTotalDistance,
 })(HeaderBlock)
 

@@ -14,8 +14,8 @@ class AppRouter extends React.Component {
                 <div className="main">
                     <Switch>
                         <Route path="/" component={Home} exact={true} />
-                        <Route path="/redirect" component={StravaRedirect}/>
-                        <Route path="/yourdistance" component={YourDistance}/>
+                        <Route path="/redirect" component={StravaRedirect} />
+                        <Route path="/yourdistance" component={YourDistance} />
                         <Route path="/about" component={About} />
                     </Switch>
                 </div>

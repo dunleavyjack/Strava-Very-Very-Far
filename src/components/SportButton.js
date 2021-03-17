@@ -4,8 +4,8 @@ import { changeUnits, addSport, removeSport, setTotalDistance } from '../actions
 
 const SportButton = ({ userActivities: { runTotal, rideTotal, swimTotal }, addSport, sports, metric, removeSport, setTotalDistance, text, selectionStatus }) => {
     const [selected, setSelected] = useState(false)
-    
-    
+
+
     useEffect(() => {
         document.getElementsByClassName("redux-clicker")[0].click()
     }, [])
@@ -52,7 +52,7 @@ const SportButton = ({ userActivities: { runTotal, rideTotal, swimTotal }, addSp
         }
     }
 
-    if(selected===true){
+    if (selected === true) {
         return <button className="redux-clicker button-orange mt-3 mb-3 ms-3" onClick={() => toggleSport(text)}>{text}</button>
     } else {
         return <button className="redux-clicker button-orange-unselected mt-3 mb-3 ms-3" onClick={() => toggleSport(text)}>{text}</button>
