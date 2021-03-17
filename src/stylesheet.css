@@ -194,3 +194,8 @@
 .purple{
     color: #28259B !important;
 }
+
+.selection-text{
+    color: gray;
+    line-height: 60px;
+}

@@ -44,6 +44,19 @@ export const convertToMiles = meters => {
     return meters * 0.621371 / 1000
 }
 
-export const trackLaps = (kms) => {
-    return (kms * 2.5).toFixed(2)
+
+// Distance Functions
+
+export const trackLaps = kms => {
+    return (kms * 2.5).toFixed(0)
 }
+
+export const earthLaps = kms => {
+	const earthCircumfrence = 40075; // In kms
+    const percentAround = kms/earthCircumfrence * 100
+    return percentAround.toFixed(0) + "%"
+}
+
+console.log(earthLaps(100))
+
+

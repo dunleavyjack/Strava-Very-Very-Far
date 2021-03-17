@@ -5,10 +5,10 @@ import InfoImageBlock from './InfoImageBlock'
 import InfoTextBlock from './InfoTextBlock'
 import earth from '../assets/earth.jpg'
 import track from '../assets/track.jpg'
-import { trackLaps } from '../utils/functions'
+import { earthLaps, trackLaps } from '../utils/functions'
 import SelectionBlock from './SelectionBlock'
 
-const BlockList = ({ userProfile, userActivities, metric, sports }) => {
+const BlockList = ({ userProfile, userActivities, metric, sports, totalDistance }) => {
     const totalRunDisplay = () => {
         if (sports.includes("running"))
             return (
@@ -54,8 +54,8 @@ const BlockList = ({ userProfile, userActivities, metric, sports }) => {
                     {totalRideDisplay()}
                     {totalSwimDisplay()}
                     <h1 className="info-title mt-5">How far is that?</h1>
-                    <InfoImageBlock imageSRC={earth} number={'67.97%'} text={"Around the Earth"} />
-                    <InfoImageBlock imageSRC={track} number={trackLaps(userActivities.runTotal.kms)} text={"Laps on a Track"} />
+                    <InfoImageBlock imageSRC={earth} number={earthLaps(totalDistance)} text={"Around the Earth"} />
+                    <InfoImageBlock imageSRC={track} number={trackLaps(totalDistance)} text={"Laps on a Track"} />
                 </>
             )
         }
@@ -78,6 +78,7 @@ const mapStateToProps = state => {
         userProfile: state.userProfile,
         metric: state.metric,
         sports: state.sports,
+        totalDistance: state.totalDistance
     }
 };
 
