@@ -52,13 +52,44 @@ export const trackLaps = (kms) => {
 
 export const earthLaps = (kms) => {
     const earthCircumfrence = 40075; // In kms
-    const percentAround = (kms / earthCircumfrence) * 100;
-    return fixNumber(percentAround) + "%";
+    const result = (kms / earthCircumfrence) * 100;
+    return fixNumber(result) + "%";
 };
+
+export const burjLaps = (kms) => {
+    const burjHeight = .83 * 2 // Up and down
+    const result = (kms / burjHeight)
+    return fixNumber(result)
+}
+
+export const mountEverestLaps = (kms) => {
+    const mountEverestHeight = 8.849
+    const result = (kms / mountEverestHeight)
+    return fixNumber(result)
+}
+
+export const americaLaps = (kms) => {
+    const americaLength = 4662
+    const result = (kms / americaLength)
+    return fixNumberTwoDigits(result)
+}
+
+export const southKoreaLaps = (kms) => {
+    const southKoreaLength = 1200
+    const result = (kms / southKoreaLength)
+    return fixNumberTwoDigits(result)
+}
 
 const fixNumber = (x) => {
     return x
         .toFixed(0)
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+const fixNumberTwoDigits = (x) => {
+    return x
+        .toFixed(2)
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
