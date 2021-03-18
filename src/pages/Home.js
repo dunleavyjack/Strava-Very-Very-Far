@@ -3,7 +3,7 @@ import stravaButton4X from "../assets/stravaButton4X.png";
 import demoButton4X from "../assets/demoButton4X.png";
 import personLogo from "../assets/personLogo.png";
 
-const productionURL = "veryveryfar.vercel.app/redirect"
+const productionURL = "https://veryveryfar.vercel.app/redirect"
 // const developmentURL = "http://localhost:3000/redirect"
 
 const handleLogin = () => {
