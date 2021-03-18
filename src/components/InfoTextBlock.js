@@ -1,8 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const InfoTextBlock = ({ text, distance, usingMetric }) => {
-
-    const units = usingMetric ? 'Kilometers' : 'Miles';
+    const units = usingMetric ? "Kilometers" : "Miles";
     const totalDistance = usingMetric ? distance.kms : distance.miles;
 
     return (
@@ -13,7 +12,7 @@ const InfoTextBlock = ({ text, distance, usingMetric }) => {
                 <h5 className="sport-info-black">{units}</h5>
             </div>
         </div>
-    )
+    );
 };
 
 export default InfoTextBlock;

@@ -1,5 +1,4 @@
-
-import React from 'react'
+import React from "react";
 
 const Loading = ({ text }) => {
     return (
@@ -11,7 +10,7 @@ const Loading = ({ text }) => {
                 <h3 className="mt-3 tan about-header">{text}</h3>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Loading;

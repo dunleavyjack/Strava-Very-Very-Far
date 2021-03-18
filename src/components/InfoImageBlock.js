@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const InfoImageBlock = ({ imageSRC, text, number }) => {
     return (
@@ -9,9 +9,8 @@ const InfoImageBlock = ({ imageSRC, text, number }) => {
                 <br />
                 {text}
             </h1>
-
         </div>
-    )
+    );
 };
 
-export default InfoImageBlock
+export default InfoImageBlock;
