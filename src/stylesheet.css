@@ -153,11 +153,10 @@
         background-color: #EE5535;
         font-size: 14px;
         height: 50px;
-        width: 150px;
+        width: 160px;
         border-radius: 50px;
         /* padding: 18px 48px 18px; */
         color: white;
-        min-width: 160px;
         display: inline-block;
         font-weight: 600;
         text-align: center;
@@ -174,9 +173,8 @@
     background-color: #f7f7f7;
     font-size: 14px;
     height: 50px;
-    width: 150px;
+    width: 160px;
     border-radius: 50px;
-    min-width: 160px;
     display: inline-block;
     font-weight: 600;
     text-align: center;
@@ -192,12 +190,11 @@
 .button-purple{
     background-color: #28259B;
     font-size: 14px;
-    width: 150px;
+    width: 160px;
     color: white;
     height: 50px;
     border-radius: 50px;
     /* padding: 18px 48px 18px; */
-    min-width: 160px;
     display: inline-block;
     font-weight: 600;
     text-align: center;

@@ -19,7 +19,7 @@ const YourDistance = ({
     setTotalDistance,
 }) => {
     return (
-        <div>
+        <div className="container p-0">
             <BlockList />
         </div>
     );

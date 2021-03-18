@@ -19,7 +19,7 @@ const HeaderBlock = ({
     setTotalDistance,
 }) => {
     return (
-        <div className="mt-5 light-gray">
+        <div className="mt-5 light-gray-border">
             <CircularProfilePic imageURL={userProfile.profile} />
             <h1 className="bold-poppins purple mt-4">
                 Hi, {userProfile.firstname}
