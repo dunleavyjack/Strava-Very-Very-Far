@@ -212,3 +212,17 @@
     color: gray;
     line-height: 60px;
 }
+
+.login-button:active {
+    filter: brightness(80%);
+}
+
+.custom-link{
+    text-decoration: none;
+    color: #28259B !important;
+}
+
+.fixed-container{
+    max-width: 30em;
+    line-height: 35px;
+}

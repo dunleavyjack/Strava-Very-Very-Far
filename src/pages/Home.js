@@ -7,11 +7,11 @@ import personLogo from "../assets/personLogo.png";
 // For production, Strava domain set to: veryveryfar.vercel.app
 // For development, Strava domain set to: localhost:3000 
 
-// const productionURL = "https://veryveryfar.vercel.app/redirect"
-const developmentURL = "http://localhost:3000/redirect"
+const productionURL = "https://veryveryfar.vercel.app/redirect"
+// const developmentURL = "http://localhost:3000/redirect"
 
 const handleLogin = () => {
-    window.location = `http://www.strava.com/oauth/authorize?client_id=46874&response_type=code&redirect_uri=${developmentURL}/exchange_token&approval_prompt=force&scope=read`;
+    window.location = `http://www.strava.com/oauth/authorize?client_id=46874&response_type=code&redirect_uri=${productionURL}/exchange_token&approval_prompt=force&scope=read`;
 };
 
 const Home = () => {
