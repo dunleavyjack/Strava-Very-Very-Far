@@ -213,12 +213,14 @@
     line-height: 60px;
 }
 
-.login-button:active {
-    filter: brightness(80%);
-}
+
 
 .login-button:visited {
     filter: brightness(80%); 
+}
+
+.login-button:active {
+    filter: brightness(80%);
 }
 
 .custom-link{
