@@ -217,6 +217,10 @@
     filter: brightness(80%);
 }
 
+.login-button:visited {
+    filter: brightness(80%); 
+}
+
 .custom-link{
     text-decoration: none;
     color: #28259B !important;
