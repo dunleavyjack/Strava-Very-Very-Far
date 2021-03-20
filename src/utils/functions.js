@@ -80,6 +80,12 @@ export const southKoreaLaps = (kms) => {
     return fixNumberTwoDigits(result)
 }
 
+export const moonLaps = (kms) => {
+    const moonDistance = 384400
+    const result = (kms / moonDistance) * 100
+    return fixNumberTwoDigits(result) + "%"
+}
+
 const fixNumber = (x) => {
     return x
         .toFixed(0)
@@ -93,3 +99,4 @@ const fixNumberTwoDigits = (x) => {
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
+

@@ -8,6 +8,7 @@ import track from "../assets/track.jpg";
 import burj from '../assets/burj.jpeg';
 import usa from '../assets/usa.jpeg'
 import seoul from '../assets/seoul.jpeg'
+import moon from '../assets/moon.jpeg'
 import mountEverest from '../assets/mountEverest.jpeg'
 import {
     earthLaps,
@@ -15,7 +16,8 @@ import {
     burjLaps,
     americaLaps,
     southKoreaLaps,
-    mountEverestLaps
+    mountEverestLaps,
+    moonLaps
 } from "../utils/functions";
 import SelectionBlock from "./SelectionBlock";
 
@@ -107,6 +109,11 @@ const BlockList = ({
                         imageSRC={mountEverest}
                         number={mountEverestLaps(totalDistance)}
                         text={"Mount Everests"}
+                    />
+                    <InfoImageBlock
+                        imageSRC={moon}
+                        number={moonLaps(totalDistance)}
+                        text={"To the Moon"}
                     />
                 </>
             );
