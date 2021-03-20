@@ -11,10 +11,11 @@ const { REACT_APP_CLIENT_ID } = process.env;
 
 // For development, Strava domain set to: localhost:3000 
 const URL = "http://localhost:3000/redirect"
+const scope = "read"
 
 const handleLogin = () => {
     window.location =
-        `http://www.strava.com/oauth/authorize?client_id=${REACT_APP_CLIENT_ID}&response_type=code&redirect_uri=${URL}/exchange_token&approval_prompt=force&scope=read`;
+        `http://www.strava.com/oauth/authorize?client_id=${REACT_APP_CLIENT_ID}&response_type=code&redirect_uri=${URL}/exchange_token&approval_prompt=force&scope=${scope}`;
 };
 
 const Home = () => {
