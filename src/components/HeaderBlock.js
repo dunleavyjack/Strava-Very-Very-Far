@@ -1,6 +1,7 @@
 import { React } from "react";
 import CircularProfilePic from "./CircularProfilePic";
 import { connect } from "react-redux";
+import blankAvatar from '../assets/blankAvatar.jpeg'
 import {
     changeUnits,
     addSport,
@@ -9,9 +10,12 @@ import {
 } from "../actions";
 
 const HeaderBlock = ({ userProfile }) => {
+
+    const profileImage = userProfile.profile || blankAvatar;
+
     return (
         <div className="mt-5">
-            <CircularProfilePic imageURL={userProfile.profile} />
+            <CircularProfilePic imageURL={profileImage} />
         </div>
     );
 };

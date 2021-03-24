@@ -6,11 +6,11 @@ import personLogo from "../assets/personLogo.png";
 const { REACT_APP_CLIENT_ID } = process.env;
 
 
-// For production, Strava domain set to: veryveryfar.vercel.app
-// const URL = "https://veryveryfar.vercel.app/redirect"
 
-// For development, Strava domain set to: localhost:3000 
-const URL = "http://localhost:3000/redirect"
+const URL = "https://veryveryfar.vercel.app/redirect"
+// const URL = "http://localhost:3000/redirect"
+
+
 const scope = "read"
 
 const handleLogin = () => {
