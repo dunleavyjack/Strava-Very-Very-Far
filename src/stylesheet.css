@@ -36,14 +36,14 @@
     color: #EE5535;
     font-weight: 600;
     font-size: 30px;
-    line-height: 0%;
+    line-height: 0.5;
 }
 
 .sport-info-black{
     text-align: right !important;
     font-weight: 600;
     font-size: 30px;
-    line-height: 0%;
+    line-height: 0.5;
 
 }
 
@@ -153,7 +153,7 @@
         background-color: #EE5535;
         font-size: 14px;
         height: 50px;
-        width: 160px;
+        width: 70px;
         border-radius: 50px;
         /* padding: 18px 48px 18px; */
         color: white;
@@ -173,7 +173,7 @@
     background-color: #f7f7f7;
     font-size: 14px;
     height: 50px;
-    width: 160px;
+    width: 70px;
     border-radius: 50px;
     display: inline-block;
     font-weight: 600;
@@ -190,7 +190,7 @@
 .button-purple{
     background-color: #28259B;
     font-size: 14px;
-    width: 160px;
+    width: 70px;
     color: white;
     height: 50px;
     border-radius: 50px;
@@ -229,4 +229,9 @@
 .fixed-container{
     max-width: 30em;
     line-height: 35px;
+}
+
+.bottom-space{
+    background-color: white;
+    height: 70px;
 }

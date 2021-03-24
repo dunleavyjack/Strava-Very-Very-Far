@@ -50,13 +50,23 @@ const SportButton = ({
         }
     };
 
+    const emoji = (text) => {
+        if (text === "running") {
+            return <h3>&#127939;</h3>
+        } else if (text === "riding") {
+            return <h3>&#128692;</h3>
+        } else {
+            return <h3>&#127946;</h3>
+        }
+    }
+
     if (selected === true) {
         return (
             <button
                 className="redux-clicker button-orange mt-3 mb-3 ms-3"
                 onClick={() => toggleSport(text)}
             >
-                {text}
+                {emoji(text)}
             </button>
         );
     } else {
@@ -65,7 +75,7 @@ const SportButton = ({
                 className="redux-clicker button-orange-unselected mt-3 mb-3 ms-3"
                 onClick={() => toggleSport(text)}
             >
-                {text}
+                {emoji(text)}
             </button>
         );
     }

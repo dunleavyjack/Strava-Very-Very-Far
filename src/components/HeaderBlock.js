@@ -8,32 +8,17 @@ import {
     setTotalDistance,
 } from "../actions";
 
-const HeaderBlock = ({
-    userActivities: { runTotal, rideTotal, swimTotal },
-    userProfile,
-    changeUnits,
-    addSport,
-    sports,
-    metric,
-    removeSport,
-    setTotalDistance,
-}) => {
+const HeaderBlock = ({ userProfile }) => {
     return (
-        <div className="mt-5 light-gray-border">
+        <div className="mt-5">
             <CircularProfilePic imageURL={userProfile.profile} />
-            <h1 className="bold-poppins purple mt-4">
-                Hi, {userProfile.firstname}
-            </h1>
         </div>
     );
 };
 
 const mapStateToProps = (state) => {
     return {
-        userActivities: state.userActivities,
         userProfile: state.userProfile,
-        metric: state.metric,
-        sports: state.sports,
     };
 };
 

@@ -10,6 +10,8 @@ import usa from '../assets/usa.jpeg'
 import seoul from '../assets/seoul.jpeg'
 import moon from '../assets/moon.jpeg'
 import mountEverest from '../assets/mountEverest.jpeg'
+import BottomSpace from './BottomSpace'
+import Footer from './Footer'
 import {
     earthLaps,
     trackLaps,
@@ -32,7 +34,7 @@ const BlockList = ({
         if (sports.includes("running")) {
             return (
                 <InfoTextBlock
-                    text={"Running"}
+                    text={'Running'}
                     distance={userActivities.runTotal}
                     usingMetric={metric}
                 />
@@ -115,6 +117,8 @@ const BlockList = ({
                         number={moonLaps(totalDistance)}
                         text={"To the Moon"}
                     />
+                    <Footer />
+                    <BottomSpace />
                 </>
             );
         }

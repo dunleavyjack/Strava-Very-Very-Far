@@ -14,12 +14,11 @@ const SelectionBlock = ({ changeUnits, metric }) => {
     };
 
     const conversionButton = () => {
-        return metric ? "Change to Miles" : "Change to Kms";
+        return metric ? "Kms" : "Miles";
     };
 
     return (
-        <div className="selection-block mt-5">
-            <h5 className="selection-text">Choose sports to view</h5>
+        <div className="fixed-bottom mb-3">
             <SportButton text={"running"} />
             <SportButton text={"riding"} />
             <SportButton text={"swimming"} />
