@@ -235,3 +235,8 @@
     background-color: white;
     height: 70px;
 }
+
+.small-width{
+    width: 90px;
+    float: right !important;
+}

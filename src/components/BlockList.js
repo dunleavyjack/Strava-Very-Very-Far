@@ -28,7 +28,6 @@ import {
 import SelectionBlock from "./SelectionBlock";
 
 const BlockList = ({
-    userProfile,
     userActivities,
     metric,
     sports,

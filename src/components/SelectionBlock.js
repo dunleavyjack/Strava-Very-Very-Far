@@ -18,7 +18,7 @@ const SelectionBlock = ({ changeUnits, metric }) => {
     };
 
     return (
-        <div className="fixed-bottom mb-3">
+        <div className="fixed-bottom mb-3 small-width ms-auto mx-2">
             <SportButton text={"running"} />
             <SportButton text={"riding"} />
             <SportButton text={"swimming"} />
