@@ -18,6 +18,10 @@ const handleLogin = () => {
         `http://www.strava.com/oauth/authorize?client_id=${REACT_APP_CLIENT_ID}&response_type=code&redirect_uri=${URL}/exchange_token&approval_prompt=force&scope=${scope}`;
 };
 
+const handleDemoLogin = () => {
+    window.location = "demo"
+};
+
 const Home = () => {
     return (
         <div className="d-flex justify-content-center align-items-center text-center content-body">
@@ -41,6 +45,7 @@ const Home = () => {
                 <div>
                     <img
                         src={demoButton4X}
+                        onClick={handleDemoLogin}
                         alt="demo login"
                         className="login-button"
                     ></img>

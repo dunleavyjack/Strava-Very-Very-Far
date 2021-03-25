@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "../pages/Home";
 import StravaRedirect from "../pages/StravaRedirect";
 import YourDistance from "../pages/YourDistance";
+import YourDistanceDemo from '../pages/YourDistanceDemo'
 import Navbar from "../components/Navbar";
 import About from "../pages/About";
 
@@ -16,6 +17,7 @@ class AppRouter extends React.Component {
                         <Route path="/" component={Home} exact={true} />
                         <Route path="/redirect" component={StravaRedirect} />
                         <Route path="/yourdistance" component={YourDistance} />
+                        <Route path="/demo" component={YourDistanceDemo} />
                         <Route path="/about" component={About} />
                     </Switch>
                 </div>
