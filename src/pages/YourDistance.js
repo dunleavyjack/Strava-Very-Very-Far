@@ -1,7 +1,13 @@
-import React from "react";
+import { React } from "react";
+import { connect } from "react-redux";
 import BlockList from "../components/BlockList";
 
-const YourDistance = () => {
+const YourDistance = ({ userProfile }) => {
+    //If refreshed, return home
+    if (!userProfile) {
+        window.location = "/"
+    }
+
     return (
         <div className="container p-0">
             <BlockList />
@@ -10,4 +16,11 @@ const YourDistance = () => {
 };
 
 
-export default YourDistance;
+const mapStateToProps = (state) => {
+    return {
+        userProfile: state.userProfile
+    };
+};
+
+export default connect(mapStateToProps, {
+})(YourDistance);
