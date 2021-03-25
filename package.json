@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.0",
+    "aos": "^2.3.4",
     "axios": "^0.21.1",
     "eslint-config-airbnb": "^18.2.1",
     "lodash": "^4.17.21",

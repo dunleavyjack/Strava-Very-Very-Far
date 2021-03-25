@@ -184,7 +184,7 @@
     border: 4px solid #EE5535;
     text-transform: capitalize;
     transition-property: background-color,border-color,color,box-shadow,filter;
-    transition-duration: .3s;
+    transition-duration: .1s;
 }
 
 .button-purple{
