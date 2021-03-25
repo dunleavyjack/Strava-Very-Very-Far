@@ -10,6 +10,8 @@ import usa from '../assets/usa.jpeg'
 import seoul from '../assets/seoul.jpeg'
 import moon from '../assets/moon.jpeg'
 import mountEverest from '../assets/mountEverest.jpeg'
+import tourDeFrance from '../assets/tourDeFrance.jpeg'
+import pool from '../assets/pool.jpeg'
 import BottomSpace from './BottomSpace'
 import Footer from './Footer'
 import {
@@ -19,7 +21,9 @@ import {
     americaLaps,
     southKoreaLaps,
     mountEverestLaps,
-    moonLaps
+    moonLaps,
+    tourLaps,
+    poolLaps
 } from "../utils/functions";
 import SelectionBlock from "./SelectionBlock";
 
@@ -88,14 +92,14 @@ const BlockList = ({
                         text={"Laps on a Track"}
                     />
                     <InfoImageBlock
-                        imageSRC={earth}
-                        number={earthLaps(totalDistance)}
-                        text={"Around the Earth"}
+                        imageSRC={pool}
+                        number={poolLaps(totalDistance)}
+                        text={"Olympic Swimming Pools"}
                     />
                     <InfoImageBlock
-                        imageSRC={usa}
-                        number={americaLaps(totalDistance)}
-                        text={"Times Across America"}
+                        imageSRC={tourDeFrance}
+                        number={tourLaps(totalDistance)}
+                        text={"Tour De France Finishes"}
                     />
                     <InfoImageBlock
                         imageSRC={burj}
@@ -103,14 +107,24 @@ const BlockList = ({
                         text={"Trips Up and Down the Burj Khalifa"}
                     />
                     <InfoImageBlock
+                        imageSRC={mountEverest}
+                        number={mountEverestLaps(totalDistance)}
+                        text={"Mount Everests"}
+                    />
+                    <InfoImageBlock
+                        imageSRC={usa}
+                        number={americaLaps(totalDistance)}
+                        text={"Times Across America"}
+                    />
+                    <InfoImageBlock
                         imageSRC={seoul}
                         number={southKoreaLaps(totalDistance)}
                         text={"Times Across South Korea"}
                     />
                     <InfoImageBlock
-                        imageSRC={mountEverest}
-                        number={mountEverestLaps(totalDistance)}
-                        text={"Mount Everests"}
+                        imageSRC={earth}
+                        number={earthLaps(totalDistance)}
+                        text={"Around the Earth"}
                     />
                     <InfoImageBlock
                         imageSRC={moon}

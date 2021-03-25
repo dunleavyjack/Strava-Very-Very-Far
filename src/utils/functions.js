@@ -50,6 +50,10 @@ export const trackLaps = (kms) => {
     return fixNumber(kms * 2.5);
 };
 
+export const poolLaps = (kms) => {
+    return fixNumber(kms * 20);
+};
+
 export const earthLaps = (kms) => {
     const earthCircumfrence = 40075; // In kms
     const result = (kms / earthCircumfrence) * 100;
@@ -59,6 +63,12 @@ export const earthLaps = (kms) => {
 export const burjLaps = (kms) => {
     const burjHeight = .83 * 2 // Up and down
     const result = (kms / burjHeight)
+    return fixNumber(result)
+}
+
+export const tourLaps = (kms) => {
+    const tourLength = 3500
+    const result = (kms / tourLength)
     return fixNumber(result)
 }
 

@@ -10,9 +10,7 @@ import {
 } from "../actions";
 
 const HeaderBlock = ({ userProfile }) => {
-
     const profileImage = userProfile.profile || blankAvatar;
-
     return (
         <div className="mt-5">
             <CircularProfilePic imageURL={profileImage} />
