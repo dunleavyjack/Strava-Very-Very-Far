@@ -107,7 +107,7 @@ const BlockList = ({
                     <InfoImageBlock
                         imageSRC={mountEverest}
                         number={mountEverestLaps(totalDistance)}
-                        text={"Mount Everests"}
+                        text={"Mount Everest Climbs"}
                     />
                     <InfoImageBlock
                         imageSRC={usa}
