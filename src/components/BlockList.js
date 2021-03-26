@@ -12,7 +12,6 @@ import moon from '../assets/moon.jpeg'
 import mountEverest from '../assets/mountEverest.jpeg'
 import tourDeFrance from '../assets/tourDeFrance.jpeg'
 import pool from '../assets/pool.jpeg'
-import BottomSpace from './BottomSpace'
 import Footer from './Footer'
 import {
     earthLaps,
