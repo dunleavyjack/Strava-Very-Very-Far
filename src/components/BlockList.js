@@ -131,7 +131,6 @@ const BlockList = ({
                         text={"To the Moon"}
                     />
                     <Footer />
-                    <BottomSpace />
                 </>
             );
         }
