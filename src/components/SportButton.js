@@ -11,17 +11,18 @@ const SportButton = ({
     userActivities: { runTotal, rideTotal, swimTotal },
     addSport,
     sports,
-    metric,
     removeSport,
     setTotalDistance,
     text,
-    selectionStatus,
+    clickMe
 }) => {
     const [selected, setSelected] = useState(false);
 
     useEffect(() => {
-        document.getElementsByClassName("redux-clicker")[0].click();
-    }, []);
+        if (clickMe === true) {
+            document.getElementsByClassName("redux-clicker")[0].click();
+        }
+    }, [clickMe]);
 
     const combinedDistance = () => {
         let result = 0;

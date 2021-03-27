@@ -6,6 +6,7 @@ import YourDistance from "../pages/YourDistance";
 import YourDistanceDemo from '../pages/YourDistanceDemo'
 import Navbar from "../components/Navbar";
 import About from "../pages/About";
+import NotFound from "../pages/NotFound";
 
 class AppRouter extends React.Component {
     render() {
@@ -19,6 +20,7 @@ class AppRouter extends React.Component {
                         <Route path="/yourdistance" component={YourDistance} />
                         <Route path="/demo" component={YourDistanceDemo} />
                         <Route path="/about" component={About} />
+                        <Route component={NotFound} />
                     </Switch>
                 </div>
             </BrowserRouter>

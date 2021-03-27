@@ -67,7 +67,7 @@ export const burjLaps = (kms) => {
 }
 
 export const tourLaps = (kms) => {
-    const tourLength = 3500
+    const tourLength = 3470
     const result = (kms / tourLength)
     return fixNumber(result)
 }

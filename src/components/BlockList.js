@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+
 import HeaderBlock from "./HeaderBlock";
 import InfoImageBlock from "./InfoImageBlock";
 import InfoTextBlock from "./InfoTextBlock";
@@ -88,46 +89,73 @@ const BlockList = ({
                         imageSRC={track}
                         number={trackLaps(totalDistance)}
                         text={"Laps on a Track"}
+                        usingMetric={metric}
+                        kms={"(400 Meters)"}
+                        miles={"(0.25 Miles)"}
                     />
                     <InfoImageBlock
                         imageSRC={pool}
                         number={poolLaps(totalDistance)}
                         text={"Olympic Swimming Pools"}
+                        usingMetric={metric}
+                        kms={"(50 Meters)"}
+                        miles={"(0.03 Miles)"}
                     />
                     <InfoImageBlock
                         imageSRC={tourDeFrance}
                         number={tourLaps(totalDistance)}
                         text={"Tour De France Finishes"}
+                        usingMetric={metric}
+                        kms={"(3,470 Kms)"}
+                        miles={"(2,156 Miles)"}
                     />
                     <InfoImageBlock
                         imageSRC={burj}
                         number={burjLaps(totalDistance)}
                         text={"Trips Up and Down the Burj Khalifa"}
+                        usingMetric={metric}
+                        kms={"(830 Meters)"}
+                        miles={"(0.52 Miles)"}
                     />
                     <InfoImageBlock
                         imageSRC={mountEverest}
                         number={mountEverestLaps(totalDistance)}
-                        text={"Mount Everest Climbs"}
+                        text={"Climbs up Mount Everest"}
+                        usingMetric={metric}
+                        kms={"(8,849 Meters)"}
+                        miles={"(5.49 Miles)"}
                     />
                     <InfoImageBlock
                         imageSRC={usa}
                         number={americaLaps(totalDistance)}
                         text={"Times Across America"}
+                        usingMetric={metric}
+                        kms={"(4,662 Kms)"}
+                        miles={"(2,896 Miles)"}
                     />
                     <InfoImageBlock
                         imageSRC={seoul}
                         number={southKoreaLaps(totalDistance)}
                         text={"Times Across South Korea"}
+                        usingMetric={metric}
+                        kms={"(1,200 Kms)"}
+                        miles={"(745 Miles)"}
                     />
                     <InfoImageBlock
                         imageSRC={earth}
                         number={earthLaps(totalDistance)}
                         text={"Around the Earth"}
+                        usingMetric={metric}
+                        kms={"(40,075 Kms)"}
+                        miles={"(24,901 Miles)"}
                     />
                     <InfoImageBlock
                         imageSRC={moon}
                         number={moonLaps(totalDistance)}
                         text={"To the Moon"}
+                        usingMetric={metric}
+                        kms={"(384,400 Kms)"}
+                        miles={"(238,855 Miles)"}
                     />
                     <Footer />
                 </>
