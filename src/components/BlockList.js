@@ -80,7 +80,7 @@ const BlockList = ({
         } else {
             return (
                 <>
-                    <h1 className="info-title mt-5">Your Totals</h1>
+                    <h1 className="info-title mt-4">Your Totals</h1>
                     {totalRunDisplay()}
                     {totalRideDisplay()}
                     {totalSwimDisplay()}

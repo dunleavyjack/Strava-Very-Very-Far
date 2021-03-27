@@ -94,6 +94,10 @@
     /* font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300))); */
 }
 
+.purple-border{
+    border: 5px #28259B solid;
+}
+
 .light-gray {
     background-color: #f7f7f7;
     border-radius: 50px;

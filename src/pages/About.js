@@ -20,6 +20,7 @@ const About = () => {
             </h5>
                 <br />
                 <h5 className="mb-5 black-body whiteish">Strava's full Privacy Policy, which covers approved third-party projects like this one, is available <a className="custom-link" href="https://www.strava.com/legal/privacy">here</a>. </h5>
+                {/* <h5 className="black-body whiteish"><a className="custom-link" href="https://github.com/dunleavyjack">Github</a> | <a className="custom-link" href="https://medium.com/@jack___joseph">Medium</a> | <a className="custom-link" href="https://www.linkedin.com/in/jack-dunleavy-0b177b83/"> LinkedIn </a></h5> */}
                 <h5 className="black-body whiteish mb-5">Seoul 2021 :)</h5>
             </div>
         </div>
