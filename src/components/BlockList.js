@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 
 import HeaderBlock from "./HeaderBlock";
 import InfoImageBlock from "./InfoImageBlock";
@@ -27,12 +27,14 @@ import {
 } from "../utils/functions";
 import SelectionBlock from "./SelectionBlock";
 
-const BlockList = ({
-    userActivities,
-    metric,
-    sports,
-    totalDistance,
-}) => {
+const BlockList = () => {
+    const {
+        userActivities, 
+        metric, 
+        sports, 
+        totalDistance
+    } = useSelector(state => state);
+    
     const totalRunDisplay = () => {
         if (sports.includes("running")) {
             return (
@@ -174,14 +176,4 @@ const BlockList = ({
     );
 };
 
-const mapStateToProps = (state) => {
-    return {
-        userActivities: state.userActivities,
-        userProfile: state.userProfile,
-        metric: state.metric,
-        sports: state.sports,
-        totalDistance: state.totalDistance,
-    };
-};
-
-export default connect(mapStateToProps)(BlockList);
+export default BlockList;
