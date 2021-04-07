@@ -1,9 +1,10 @@
-import { React } from "react";
-import CircularProfilePic from "./CircularProfilePic";
-import { connect } from "react-redux";
-import blankAvatar from '../assets/blankAvatar.jpeg'
+import { React } from 'react';
+import CircularProfilePic from './CircularProfilePic';
+import { useSelector } from 'react-redux';
+import blankAvatar from '../assets/blankAvatar.jpeg';
 
-const HeaderBlock = ({ userProfile }) => {
+const HeaderBlock = () => {
+    const userProfile = useSelector((state) => state.userProfile);
     const profileImage = userProfile.profile || blankAvatar;
     return (
         <div className="mt-5">
@@ -12,11 +13,4 @@ const HeaderBlock = ({ userProfile }) => {
     );
 };
 
-const mapStateToProps = (state) => {
-    return {
-        userProfile: state.userProfile,
-    };
-};
-
-export default connect(mapStateToProps)(HeaderBlock);
-
+export default HeaderBlock;

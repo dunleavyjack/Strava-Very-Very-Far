@@ -1,11 +1,11 @@
-import { React } from "react";
-import { useSelector } from "react-redux";
-import BlockList from "../components/BlockList";
+import { React } from 'react';
+import { useSelector } from 'react-redux';
+import BlockList from '../components/BlockList';
 
 const YourDistance = () => {
-    const userProfile = useSelector(state => state.userProfile)
+    const userProfile = useSelector((state) => state.userProfile);
     if (!userProfile) {
-        window.location = "/"
+        window.location = '/';
     }
 
     return (

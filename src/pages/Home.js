@@ -1,25 +1,21 @@
-import React from "react";
-import stravaButton4X from "../assets/stravaButton4X.png";
-import demoButton4X from "../assets/demoButton4X.png";
-import personLogo from "../assets/personLogo.png";
+import React from 'react';
+import stravaButton4X from '../assets/stravaButton4X.png';
+import demoButton4X from '../assets/demoButton4X.png';
+import personLogo from '../assets/personLogo.png';
 
 const { REACT_APP_CLIENT_ID } = process.env;
 
-
-
 // const URL = "https://veryveryfar.vercel.app/redirect"
-const URL = "http://localhost:3000/redirect"
+const URL = 'http://localhost:3000/redirect';
 
-
-const scope = "read"
+const scope = 'read';
 
 const handleLogin = () => {
-    window.location =
-        `http://www.strava.com/oauth/authorize?client_id=${REACT_APP_CLIENT_ID}&response_type=code&redirect_uri=${URL}/exchange_token&approval_prompt=force&scope=${scope}`;
+    window.location = `http://www.strava.com/oauth/authorize?client_id=${REACT_APP_CLIENT_ID}&response_type=code&redirect_uri=${URL}/exchange_token&approval_prompt=force&scope=${scope}`;
 };
 
 const handleDemoLogin = () => {
-    window.location = "demo"
+    window.location = 'demo';
 };
 
 const Home = () => {

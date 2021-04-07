@@ -1,14 +1,14 @@
-import React from "react";
-import _ from "lodash";
-import { connect } from "react-redux";
-import { setUserProfile, setUserActivities } from "../actions";
-import Loading from "../components/Loading";
+import React from 'react';
+import _ from 'lodash';
+import { connect } from 'react-redux';
+import { setUserProfile, setUserActivities } from '../actions';
+import Loading from '../components/Loading';
 import {
     cleanUpAuthToken,
     testAuthGetter,
     getUserData,
     convertToMiles,
-} from "../utils/functions";
+} from '../utils/functions';
 
 class StravaRedirect extends React.Component {
     componentDidMount() {
@@ -17,7 +17,7 @@ class StravaRedirect extends React.Component {
             try {
                 // If not redirected to Strava, return to home
                 if (_.isEmpty(location)) {
-                    return history.push("/");
+                    return history.push('/');
                 }
 
                 // Save the Auth Token to the Store (it's located under 'search' for some reason)
@@ -38,7 +38,7 @@ class StravaRedirect extends React.Component {
                             userActivities.data.all_run_totals.distance / 1000
                         ).toFixed(2),
                         miles: convertToMiles(
-                            userActivities.data.all_run_totals.distance
+                            userActivities.data.all_run_totals.distance,
                         ).toFixed(2),
                         count: userActivities.data.all_run_totals.count,
                     },
@@ -47,7 +47,7 @@ class StravaRedirect extends React.Component {
                             userActivities.data.all_ride_totals.distance / 1000
                         ).toFixed(2),
                         miles: convertToMiles(
-                            userActivities.data.all_ride_totals.distance
+                            userActivities.data.all_ride_totals.distance,
                         ).toFixed(2),
                         count: userActivities.data.all_ride_totals.count,
                     },
@@ -56,17 +56,17 @@ class StravaRedirect extends React.Component {
                             userActivities.data.all_swim_totals.distance / 1000
                         ).toFixed(2),
                         miles: convertToMiles(
-                            userActivities.data.all_swim_totals.distance
+                            userActivities.data.all_swim_totals.distance,
                         ).toFixed(2),
                         count: userActivities.data.all_swim_totals.count,
                     },
                 });
 
                 // Once complete, go to display page
-                history.push("/yourdistance");
+                history.push('/yourdistance');
             } catch (error) {
                 //If error, go back home
-                history.push("/");
+                history.push('/');
             }
         };
         authenticate();
@@ -75,7 +75,7 @@ class StravaRedirect extends React.Component {
     render() {
         return (
             <div>
-                <Loading text={"Talking to Strava."} />
+                <Loading text={'Talking to Strava.'} />
             </div>
         );
     }

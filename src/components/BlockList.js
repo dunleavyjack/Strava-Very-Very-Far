@@ -28,12 +28,10 @@ import {
 import SelectionBlock from "./SelectionBlock";
 
 const BlockList = () => {
-    const {
-        userActivities, 
-        metric, 
-        sports, 
-        totalDistance
-    } = useSelector(state => state);
+    const userActivities = useSelector(state => state.userActivities);
+    const metric = useSelector(state => state.metric);
+    const sports = useSelector(state => state.sports);
+    const totalDistance = useSelector(state => state.totalDistance);
     
     const totalRunDisplay = () => {
         if (sports.includes("running")) {
