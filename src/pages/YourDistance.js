@@ -1,9 +1,9 @@
 import { React } from "react";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import BlockList from "../components/BlockList";
 
-const YourDistance = ({ userProfile }) => {
-    //If refreshed, return home
+const YourDistance = () => {
+    const userProfile = useSelector(state => state.userProfile)
     if (!userProfile) {
         window.location = "/"
     }
@@ -15,12 +15,4 @@ const YourDistance = ({ userProfile }) => {
     );
 };
 
-
-const mapStateToProps = (state) => {
-    return {
-        userProfile: state.userProfile
-    };
-};
-
-export default connect(mapStateToProps, {
-})(YourDistance);
+export default YourDistance;
